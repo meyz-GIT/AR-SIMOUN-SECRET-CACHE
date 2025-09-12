@@ -29,7 +29,7 @@ public class ARUIManager : MonoBehaviour
         isPaused = false;
     }
 
-    public void GoBackToMainMenu()
+    public void GoBackToMenu()
     {
         Time.timeScale = 1f; // reset time
         SceneManager.LoadScene("MainMenu"); // replace with your menu scene name
