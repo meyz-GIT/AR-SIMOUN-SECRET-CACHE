@@ -1,0 +1,49 @@
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+
+public class SfxToggle : MonoBehaviour
+{
+    private int switchStatus = 1;
+
+    public GameObject switchButton;   // circle button
+    public RawImage background;       // insider background
+
+    // Colors (brown theme)
+    public Color circleOnColor = Color.white;
+    public Color circleOffColor = Color.black;
+    public Color bgOnColor = new Color(196f / 255f, 164f / 255f, 132f / 255f, 1f); // light brown
+    public Color bgOffColor = Color.white;
+
+    public void SwitchButtonClick()
+    {
+        // Move the circle (flip X)
+        switchButton.transform.DOLocalMoveX(
+            -switchButton.transform.localPosition.x,
+            0.5f
+        );
+
+        // Update status
+        switchStatus = (int)Mathf.Sign(-switchButton.transform.localPosition.x);
+        Debug.Log("SFX Switch status " + switchStatus);
+
+        if (switchStatus == -1)
+        {
+            // ON state
+            switchButton.GetComponent<RawImage>().color = circleOnColor;
+            background.color = bgOnColor;
+
+            Debug.Log("SFX: ON");
+            // TODO: enable SFX
+        }
+        else
+        {
+            // OFF state
+            switchButton.GetComponent<RawImage>().color = circleOffColor;
+            background.color = bgOffColor;
+
+            Debug.Log("SFX: OFF");
+            // TODO: disable SFX
+        }
+    }
+}
