@@ -4,69 +4,52 @@ using DG.Tweening;
 
 public class MusicToggle : MonoBehaviour
 {
-    private int switchStatus = 1;
     private bool muted = false;
 
-    public GameObject switchButton;   // circle button
-    public RawImage background;       // insider background
+    public GameObject switchButton;
+    public RawImage background;
+    public AudioSource musicSource;   // 🎵 assign your music AudioSource here
 
-    // Colors (brown theme)
+    // Colors
     public Color circleOnColor = Color.white;
     public Color circleOffColor = Color.black;
-    public Color bgOnColor = new Color(196f / 255f, 164f / 255f, 132f / 255f, 1f); // light brown
+    public Color bgOnColor = new Color(196f / 255f, 164f / 255f, 132f / 255f, 1f);
     public Color bgOffColor = Color.white;
 
     void Start()
     {
-        // Load saved state
-        if (!PlayerPrefs.HasKey("muted"))
-        {
-            PlayerPrefs.SetInt("muted", 0);
-        }
-        muted = PlayerPrefs.GetInt("muted") == 1;
+        if (!PlayerPrefs.HasKey("musicMuted"))
+            PlayerPrefs.SetInt("musicMuted", 0);
 
-        // Apply saved state
+        muted = PlayerPrefs.GetInt("musicMuted") == 1;
         ApplyState();
     }
 
     public void SwitchButtonClick()
     {
-        // Move the circle
-        switchButton.transform.DOLocalMoveX(
-            -switchButton.transform.localPosition.x,
-            0.5f
-        );
+        switchButton.transform.DOLocalMoveX(-switchButton.transform.localPosition.x, 0.5f);
 
-        // Flip mute state
         muted = !muted;
-        Save();
+        PlayerPrefs.SetInt("musicMuted", muted ? 1 : 0);
 
-        // Apply new state
         ApplyState();
     }
 
     private void ApplyState()
     {
+        musicSource.mute = muted;  // 🔑 only mutes music
+
         if (muted)
         {
-            // OFF
             switchButton.GetComponent<RawImage>().color = circleOffColor;
             background.color = bgOffColor;
-            AudioListener.pause = false;
             Debug.Log("Music: OFF");
         }
         else
         {
-            // ON
             switchButton.GetComponent<RawImage>().color = circleOnColor;
             background.color = bgOnColor;
-            AudioListener.pause = true;
             Debug.Log("Music: ON");
         }
-    }
-
-    private void Save()
-    {
-        PlayerPrefs.SetInt("muted", muted ? 1 : 0);
     }
 }

@@ -8,9 +8,9 @@ public class SfxToggle : MonoBehaviour
 
     public GameObject switchButton;
     public RawImage background;
+    public AudioSource[] sfxSources;  // 🎵 assign ALL button/back SFX AudioSources here
 
-    public AudioSource[] sfxSources;   // 🎵 All button/back sounds
-
+    // Colors
     public Color circleOnColor = Color.white;
     public Color circleOffColor = Color.black;
     public Color bgOnColor = new Color(196f / 255f, 164f / 255f, 132f / 255f, 1f);
@@ -40,7 +40,7 @@ public class SfxToggle : MonoBehaviour
         foreach (var sfx in sfxSources)
         {
             if (sfx != null)
-                sfx.mute = muted;  // 🔑 mute only SFX
+                sfx.mute = muted;  // 🔑 only mutes SFX
         }
 
         if (muted)
