@@ -419,8 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcdd6292ad9cae2468e6954124055c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchButton: {fileID: 0}
-  background: {fileID: 0}
+  switchButton: {fileID: 1646670297}
+  background: {fileID: 1154011001}
   sfxSources: []
   circleOnColor: {r: 0.54509807, g: 0.36862746, b: 0.23529412, a: 1}
   circleOffColor: {r: 0.627451, g: 0.32156864, b: 0.1764706, a: 1}
@@ -760,7 +760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &339774688
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1263,7 +1263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &576108760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &657750984
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2402,7 +2402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &998903961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3571,7 +3571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1243483540
 RectTransform:
   m_ObjectHideFlags: 0
