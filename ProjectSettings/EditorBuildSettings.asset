@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/IntroductionStory.unity
     guid: b85c961038d5f7540b675b3f2d0a597a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl1.unity
     guid: 7b57be221f3dc0749b7cde7366439cc1
   m_configObjects:
