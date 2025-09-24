@@ -10,6 +10,7 @@ public class RiddleBookBtn : MonoBehaviour
         if (!riddleBookPanel.activeInHierarchy)
         {
             riddleBookPanel.SetActive(true);
+
         }
         else
         {

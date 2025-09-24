@@ -1009,9 +1009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: {fileID: 1551024802}
-  message: {fileID: 1235382276}
-  confirmationPanel: {fileID: 401741900}
   riddleManager: {fileID: 1710638866}
 --- !u!64 &198524071
 MeshCollider:
@@ -2233,7 +2230,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 039a45ab4232bb940b0a7f49c6ac30f0, type: 3}
       propertyPath: m_Name
-      value: Pan
+      value: Ship
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 039a45ab4232bb940b0a7f49c6ac30f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2576,6 +2573,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 44176ea44e4d7224ebbf39b2b1769305, type: 3}
+--- !u!114 &554086855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554086847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleManager: {fileID: 1710638866}
 --- !u!1001 &562890691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3259,8 +3269,9 @@ GameObject:
   - component: {fileID: 717772045}
   - component: {fileID: 717772044}
   - component: {fileID: 717772043}
+  - component: {fileID: 717772046}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Beer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3274,12 +3285,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717772041}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.9, y: 0.22, z: 8.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1083897252}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &717772043
 CapsuleCollider:
@@ -3354,6 +3365,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717772041}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &717772046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717772041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleManager: {fileID: 1710638866}
 --- !u!1 &808950889
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4139,6 @@ Transform:
   - {fileID: 264841035}
   - {fileID: 417988122}
   - {fileID: 139190834}
-  - {fileID: 717772042}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166124824 stripped
@@ -4135,9 +4158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: {fileID: 1551024802}
-  message: {fileID: 1235382276}
-  confirmationPanel: {fileID: 401741900}
   riddleManager: {fileID: 1710638866}
 --- !u!64 &1166124829
 MeshCollider:
@@ -4374,9 +4394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: {fileID: 0}
-  message: {fileID: 0}
-  confirmationPanel: {fileID: 0}
   riddleManager: {fileID: 0}
 --- !u!64 &1251445603
 MeshCollider:
@@ -4472,9 +4489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: {fileID: 1551024802}
-  message: {fileID: 1235382276}
-  confirmationPanel: {fileID: 401741900}
   riddleManager: {fileID: 1710638866}
 --- !u!114 &1336950939
 MonoBehaviour:
@@ -4488,9 +4502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: {fileID: 1551024802}
-  message: {fileID: 1235382276}
-  confirmationPanel: {fileID: 401741900}
   riddleManager: {fileID: 1710638866}
 --- !u!1 &1424829571
 GameObject:
@@ -4654,11 +4665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1870309750301600832, guid: 32f3a0c748d309c42b4aa860d4cc92aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.32
+      value: -3.751
       objectReference: {fileID: 0}
     - target: {fileID: 1870309750301600832, guid: 32f3a0c748d309c42b4aa860d4cc92aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.427
       objectReference: {fileID: 0}
     - target: {fileID: 1870309750301600832, guid: 32f3a0c748d309c42b4aa860d4cc92aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4705,6 +4716,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1870309750301438054, guid: 32f3a0c748d309c42b4aa860d4cc92aa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 554086851}
+    - targetCorrespondingSourceObject: {fileID: 1870309750301438054, guid: 32f3a0c748d309c42b4aa860d4cc92aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 554086855}
   m_SourcePrefab: {fileID: 100100000, guid: 32f3a0c748d309c42b4aa860d4cc92aa, type: 3}
 --- !u!1 &1493037305
 GameObject:
@@ -5274,9 +5288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: {fileID: 1551024802}
-  message: {fileID: 1235382276}
-  confirmationPanel: {fileID: 401741900}
   riddleManager: {fileID: 0}
 --- !u!64 &1583794193
 MeshCollider:
@@ -5534,6 +5545,7 @@ GameObject:
   - component: {fileID: 1710638863}
   - component: {fileID: 1710638862}
   - component: {fileID: 1710638866}
+  - component: {fileID: 1710638867}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5642,9 +5654,26 @@ MonoBehaviour:
   riddleText: {fileID: 406593091}
   firstWordText: {fileID: 1551024802}
   winMessage: {fileID: 1235382276}
+  answer: {fileID: 1551024802}
+  message: {fileID: 1235382276}
   nextButton: {fileID: 165378894}
-  jsonFile: {fileID: 4900000, guid: 21487f2c1b8230541a449e6cb56f7119, type: 3}
+  jsonFile: {fileID: 4900000, guid: ef819818e49708343a4aec9d8399086a, type: 3}
   confirmationPanel: {fileID: 401741900}
+  riddleBookPanel: {fileID: 347062002}
+  pausePanel: {fileID: 966572206}
+  sceneName: DialogueLvl1
+--- !u!114 &1710638867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710638861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0b7f0b0b776b0458ece09f66dc5681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1716445070
 GameObject:
   m_ObjectHideFlags: 0
@@ -6124,9 +6153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: {fileID: 1551024802}
-  message: {fileID: 1235382276}
-  confirmationPanel: {fileID: 401741900}
   riddleManager: {fileID: 1710638866}
 --- !u!64 &1802127797
 MeshCollider:
@@ -7183,6 +7209,7 @@ SceneRoots:
   - {fileID: 565696241}
   - {fileID: 1083897252}
   - {fileID: 1716445073}
+  - {fileID: 717772042}
   - {fileID: 1456244852}
   - {fileID: 585712043}
   - {fileID: 533082282}

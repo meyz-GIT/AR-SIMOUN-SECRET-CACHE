@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ClickedItem : MonoBehaviour
 {
@@ -45,9 +46,8 @@ public class ClickedItem : MonoBehaviour
     }*/
 
 
-    public TextMeshProUGUI answer, message;
     private string currentItem;
-    public GameObject confirmationPanel;
+    
 
     // Add a reference to the ReadRiddles script
     public ReadRiddles riddleManager;
@@ -57,32 +57,41 @@ public class ClickedItem : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (riddleManager.riddleBookPanel.activeInHierarchy || riddleManager.pausePanel.activeInHierarchy)
         {
-            Debug.Log("Clicked object name: " + hit.collider.gameObject.name);
 
-            currentItem = answer.text;
-            if (currentItem.Equals(hit.collider.gameObject.name))
+        }
+        else
+        {
+
+            if (Physics.Raycast(ray, out hit))
             {
-                // Correct answer!
-                confirmationPanel.SetActive(true);
-                message.SetText("Nice, that's it! You got the answer to the riddle right. Now, on to the next one!");
+                Debug.Log("Clicked object name: " + hit.collider.gameObject.name);
 
-
-                // Call the method on the ReadRiddles script
-                if (riddleManager != null)
+                currentItem = riddleManager.answer.text;
+                if (currentItem.Equals(hit.collider.gameObject.name))
                 {
-                    riddleManager.RemoveCurrentRiddle();
-                }
+                    // Correct answer!
+                    riddleManager.confirmationPanel.SetActive(true);
+                    riddleManager.message.SetText("Nice, that's it! You got the answer to the riddle right. Now, on to the next one!");
 
-                hit.collider.gameObject.SetActive(false);
+
+                    // Call the method on the ReadRiddles script
+                    if (riddleManager != null)
+                    {
+                        riddleManager.RemoveCurrentRiddle();
+                    }
+
+                    hit.collider.gameObject.SetActive(false);
+                }
+                else
+                {
+                    // Incorrect answer
+                    riddleManager.confirmationPanel.SetActive(true);
+                    riddleManager.message.SetText("That's not it, but don't give up! Look closely at the riddle again—the answer is hiding in plain sight. Think carefully and try a different item.");
+                }
             }
-            else
-            {
-                // Incorrect answer
-                confirmationPanel.SetActive(true);
-                message.SetText("That's not it, but don't give up! Look closely at the riddle again—the answer is hiding in plain sight. Think carefully and try a different item.");
-            }
+
         }
     }
 }

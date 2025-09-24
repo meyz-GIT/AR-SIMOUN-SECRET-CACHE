@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -85,11 +86,11 @@ Money I can be earned, but I can't be bought. I can be spent, but I can't be use
  
 */
 
-    // Assign in the Unity Inspector
-    public TextMeshProUGUI riddleText, firstWordText, winMessage;
+    public TextMeshProUGUI riddleText, firstWordText, winMessage, answer, message;
     public Button nextButton;
     public TextAsset jsonFile;
-    public GameObject confirmationPanel;
+    public GameObject confirmationPanel, riddleBookPanel, pausePanel;
+    public string sceneName;
 
     // Change from array to a List for easy removal
     private List<string> riddles;
@@ -183,7 +184,62 @@ Money I can be earned, but I can't be bought. I can be spent, but I can't be use
     {
         if (riddles.Count == 0)
         {
-            SceneManager.LoadScene("DialogueLvl1");
+            /*//reading json file
+            string path = Path.Combine(Application.persistentDataPath, "PlayerData.json");
+            string jsonData = File.ReadAllText(path);
+            PlayerData data = JsonUtility.FromJson<PlayerData>(jsonData);
+
+            data.level++;
+
+            string json = JsonUtility.ToJson(data);
+            Debug.Log(json);
+
+
+            File.WriteAllText(path, json);
+            */
+
+            // 1. Define the file path
+            string path = Path.Combine(Application.persistentDataPath, "PlayerData.json");
+
+            // 2. Check if the file exists. If not, create it from the Resources folder.
+            if (!File.Exists(path))
+            {
+                Debug.Log("Save file not found. Creating from default in Resources.");
+                TextAsset jsonTextAsset = Resources.Load<TextAsset>(Path.GetFileNameWithoutExtension("PlayerData"));
+
+                if (jsonTextAsset != null)
+                {
+                    File.WriteAllText(path, jsonTextAsset.text);
+                }
+                else
+                {
+                    Debug.LogError("PlayerData.json not found in Resources folder!");
+                    return;
+                }
+            }
+
+            // 3. Now that the file is guaranteed to exist, read it, modify it, and save it.
+            try
+            {
+                // Read the data
+                string jsonData = File.ReadAllText(path);
+                PlayerData data = JsonUtility.FromJson<PlayerData>(jsonData);
+
+                // Modify the data
+                data.level++;
+
+                // Save the data
+                string json = JsonUtility.ToJson(data);
+                Debug.Log("Updated JSON data: " + json);
+                File.WriteAllText(path, json);
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Error during file operation: {ex.Message}");
+                return;
+            }
+
+            SceneManager.LoadScene(sceneName);
             gameObject.SetActive(false);
         }
         else
@@ -192,4 +248,12 @@ Money I can be earned, but I can't be bought. I can be spent, but I can't be use
         }
         
     }
+
+    [System.Serializable]
+    private class PlayerData
+    {
+        public int level;
+    }
+
+
 }
