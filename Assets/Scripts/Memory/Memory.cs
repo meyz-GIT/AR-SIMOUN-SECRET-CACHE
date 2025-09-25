@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Memory : MonoBehaviour
 {
     private string filePath;
+    public LevelManager levelManager;
 
     private void Start()
     {
@@ -20,11 +21,19 @@ public class Memory : MonoBehaviour
         File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
         */
 
-        //reading json file
+        /*//reading json file
         string jsonfile = File.ReadAllText(Application.dataPath + "/PlayerData.json");
         PlayerData loadedPlayerData = JsonUtility.FromJson<PlayerData>(jsonfile);
         Debug.Log(loadedPlayerData.level);
-        
+        */
+
+        /*TextAsset jsonTextAsset = Resources.Load<TextAsset>("PlayerData");
+
+        int level = int.Parse(jsonTextAsset.text);
+        */
+
+        int level = levelManager.getCurrentLevel();
+
         //get loaded scene name
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
@@ -32,13 +41,13 @@ public class Memory : MonoBehaviour
         //with progress = MainMenu, without progress = StartingMenu
         if (sceneName.Equals("MainMenu"))
         {
-            if (loadedPlayerData.level == 0)
+            if (level <= 1)
             {
                 SceneManager.LoadScene("StartingMenu");
             }
         } else if (sceneName.Equals("StartingMenu"))
         {
-            if (loadedPlayerData.level > 0)
+            if (level > 1)
             {
                 SceneManager.LoadScene("MainMenu");
             }
@@ -83,5 +92,16 @@ public class Memory : MonoBehaviour
         File.WriteAllText(filePath, updatedJson);
 
         Debug.Log("JSON file updated successfully!");
+    }
+
+    public void resetLevels()
+    {
+        PlayerData playerData = new PlayerData();
+        playerData.level = 0;
+
+        string json = JsonUtility.ToJson(playerData);
+        Debug.Log(json);
+
+        File.WriteAllText(Application.persistentDataPath + "/PlayerData.json", json);
     }
 }

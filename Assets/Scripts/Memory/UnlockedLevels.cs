@@ -9,15 +9,41 @@ public class UnlockedLevels : MonoBehaviour
 {
     public TextMeshProUGUI two, three, four, five, six, seven, eight, nine, ten;
     public Image lock2, lock3, lock4, lock5, lock6, lock7, lock8, lock9, lock10;
+    public LevelManager levelManager;
+
+    [System.Serializable]
+    public class PlayerData
+    {
+        public int level;
+    }
+
     void Start()
     {
-        //read file
+        /*//read file
         string jsonfile = File.ReadAllText(Application.dataPath + "/PlayerData.json");
         PlayerData loadedPlayerData = JsonUtility.FromJson<PlayerData>(jsonfile);
         Debug.Log(loadedPlayerData.level);
-
+        
         //lock levels
         int level = loadedPlayerData.level;
+        */
+
+        /*TextAsset jsonTextAsset = Resources.Load<TextAsset>("PlayerData");
+
+        if (jsonTextAsset == null)
+        {
+            Debug.LogError("PlayerData.json not found in Resources folder.");
+            return;
+        }
+
+        // 2. Get the raw JSON string
+        string jsonData = jsonTextAsset.text;
+
+        // 3. Deserialize the JSON string into a PlayerData object
+        PlayerData data = JsonUtility.FromJson<PlayerData>(jsonData);
+        */
+        
+        int level = levelManager.getCurrentLevel();
 
         if (level < 2)
         {
@@ -138,11 +164,7 @@ public class UnlockedLevels : MonoBehaviour
         }
     }
 
-    private class PlayerData
-    {
-        public int level;
-    }
-
+    
 
     
 }

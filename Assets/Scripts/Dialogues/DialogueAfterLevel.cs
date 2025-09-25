@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueAfterLevel : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DialogueAfterLevel : MonoBehaviour
     public GameObject primo;
     public TextMeshProUGUI textComponent;
     public float textSpeed;
+    public LevelManager levelManager;
+    public int level;
 
     private int index;
 
@@ -72,7 +75,20 @@ public class DialogueAfterLevel : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            if (level == levelManager.getCurrentLevel())
+            {
+                levelManager.AddLevelData();
+                levelManager.SaveLevelData();
+                levelManager.LoadSavedLevelData();
+                SceneManager.LoadScene("Levels");
+            }
+            else
+            {
+                SceneManager.LoadScene("Levels");
+            }
+
+            
+            
 
         }
     }

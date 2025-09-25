@@ -1549,6 +1549,8 @@ MonoBehaviour:
   primo: {fileID: 1760794227}
   textComponent: {fileID: 1580088309}
   textSpeed: 0
+  levelManager: {fileID: 765643500}
+  level: 1
   lines:
   - "Teacher:\nHowever, Isagani countered, \u201CWater is sweet and drinkable, but
     it drowns beer and extinguishes fire.\u201D"
@@ -2082,6 +2084,7 @@ GameObject:
   - component: {fileID: 765643496}
   - component: {fileID: 765643495}
   - component: {fileID: 765643499}
+  - component: {fileID: 765643500}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2187,6 +2190,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20053538d9b1adb4f839f8a2199608bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &765643500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765643494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e348ae310cc174689ee83222abfedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevelData:
+    levelNumber: 0
 --- !u!1 &770174154
 GameObject:
   m_ObjectHideFlags: 0
