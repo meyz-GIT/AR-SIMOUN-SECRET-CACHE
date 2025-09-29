@@ -20918,6 +20918,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 438967210}
     m_Modifications:
+    - target: {fileID: 2353190478387199160, guid: dfb23d60f30c46847ba7815aa09e2567, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851015956068934393, guid: dfb23d60f30c46847ba7815aa09e2567, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: df06dcedea72aff46a93052925679f7c, type: 2}
     - target: {fileID: 3851015956068934394, guid: dfb23d60f30c46847ba7815aa09e2567, type: 3}
       propertyPath: m_Name
       value: Horse_001

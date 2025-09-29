@@ -5,12 +5,11 @@ using UnityEngine;
 public class AlbumManager : MonoBehaviour
 {
     public GameObject contentContainer;
-    public LevelManager levelManager;
 
 
     void Start()
     {
-        int currentLevel = levelManager.getCurrentLevel();
+        int currentLevel = LevelManager.Instance.getCurrentLevel();
 
         if (contentContainer == null)
         {

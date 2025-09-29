@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3ac9a5e268e8dd440951696c7004540c
   - enabled: 1
-    path: Assets/Scenes/Levels.unity
-    guid: 1e1f1920a07e0914ab9f885b4d1938c7
-  - enabled: 1
     path: Assets/Scenes/IntroductionStory.unity
     guid: b85c961038d5f7540b675b3f2d0a597a
+  - enabled: 1
+    path: Assets/Scenes/Levels.unity
+    guid: 1e1f1920a07e0914ab9f885b4d1938c7
   - enabled: 1
     path: Assets/Scenes/Level 1-10/Level1.unity
     guid: 4f1216508a5068e4d933b6672fa06f96
@@ -50,7 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl1.unity
     guid: 7b57be221f3dc0749b7cde7366439cc1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl2.unity
     guid: 60ba330c5eb9f2643b8816fadc98d92b
   - enabled: 0

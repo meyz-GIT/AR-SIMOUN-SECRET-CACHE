@@ -11,7 +11,6 @@ public class DialogueAfterLevel : MonoBehaviour
     public GameObject primo;
     public TextMeshProUGUI textComponent;
     public float textSpeed;
-    public LevelManager levelManager;
     public int level;
 
     private int index;
@@ -75,21 +74,27 @@ public class DialogueAfterLevel : MonoBehaviour
         }
         else
         {
-            if (level == levelManager.getCurrentLevel())
+            Debug.Log("DEBUG 1: Dialogue finished. Checking progression.");
+
+            int currentlvl = LevelManager.Instance.getCurrentLevel(); // The potential crash point
+            int level = this.level; // The level this dialogue relates to (e.g., 1)
+
+            Debug.Log($"DEBUG 2: Current Level: {currentlvl}, Dialogue Level: {level}");
+
+            if (level == currentlvl)
             {
-                levelManager.AddLevelData();
-                levelManager.SaveLevelData();
-                levelManager.LoadSavedLevelData();
+                // Level Progression Logic
+                LevelManager.Instance.AddLevelData();
+                LevelManager.Instance.SaveLevelData();
+                Debug.Log("DEBUG 3A: Progression successful. Loading Levels scene.");
                 SceneManager.LoadScene("Levels");
             }
             else
             {
+                // Replay Logic
+                Debug.Log("DEBUG 3B: Replay detected. Loading Levels scene.");
                 SceneManager.LoadScene("Levels");
             }
-
-            
-            
-
         }
     }
 

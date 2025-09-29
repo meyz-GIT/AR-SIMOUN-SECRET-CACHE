@@ -32,6 +32,12 @@ public class ArPositioner : MonoBehaviour
                     arscene.transform.position = plane.center;
                     arscene.transform.rotation = Quaternion.identity;
                     hasplaced = true;
+
+                    planeManager.enabled = false;
+                    foreach(var p in planeManager.trackables)
+                    {
+                        p.gameObject.SetActive(false);
+                    }
                     break;
                 }
             }

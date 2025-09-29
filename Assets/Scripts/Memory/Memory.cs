@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Memory : MonoBehaviour
 {
     private string filePath;
-    public LevelManager levelManager;
 
     private void Start()
     {
@@ -32,7 +31,7 @@ public class Memory : MonoBehaviour
         int level = int.Parse(jsonTextAsset.text);
         */
 
-        int level = levelManager.getCurrentLevel();
+        int level = LevelManager.Instance.getCurrentLevel();
 
         //get loaded scene name
         Scene currentScene = SceneManager.GetActiveScene();

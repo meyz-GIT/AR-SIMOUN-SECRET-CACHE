@@ -1,162 +1,82 @@
 using UnityEngine;
-using System.IO;
-using UnityEngine.Networking;
-using System.Collections;
-using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-    private const string levelFileName = "PlayerData.json";
-    private string filePath;
-    public LevelData currentLevelData;
-    //public TextMeshProUGUI awakeLevel;
+    // --- STATIC SINGLETON INSTANCE ---
+    public static LevelManager Instance { get; private set; }
 
-    private void Start()
+    // --- PRIVATE DATA ---
+    // Key used to store and retrieve the level number in PlayerPrefs
+    private const string LevelKey = "GameLevelProgress";
+
+    // In-memory representation of the current level (defaulting to 1)
+    private int currentLevelNumber = 1;
+
+    // --- UNITY LIFECYCLE ---
+
+    private void Awake()
     {
-        // On Android, use a streaming assets path for read-only files.
-        // For writing, you would use Application.persistentDataPath.
-        filePath = Path.Combine(Application.streamingAssetsPath, levelFileName);
-
-        StartCoroutine(LoadLevelData());
-        LoadSavedLevelData();
-    }
-
-    private IEnumerator LoadLevelData()
-    {
-        string jsonString = "";
-
-        // Check if the application is running on an Android device
-        if (Application.platform == RuntimePlatform.Android)
+        // 1. Singleton Enforcement and Persistence
+        if (Instance != null && Instance != this)
         {
-            // Use UnityWebRequest for Android as files are inside the .apk
-            using (UnityWebRequest www = UnityWebRequest.Get(filePath))
-            {
-                yield return www.SendWebRequest();
-
-                if (www.result == UnityWebRequest.Result.Success)
-                {
-                    jsonString = www.downloadHandler.text;
-                }
-                else
-                {
-                    Debug.LogError("Failed to read JSON file from StreamingAssets: " + www.error);
-                    yield break;
-                }
-            }
-        }
-        else
-        {
-            // Use standard file I/O for editor and other platforms
-            if (File.Exists(filePath))
-            {
-                jsonString = File.ReadAllText(filePath);
-            }
-            else
-            {
-                Debug.LogError("JSON file not found at " + filePath);
-                yield break;
-            }
-        }
-
-        // Now that we have the JSON string, proceed with deserialization
-        DeserializeLevel(jsonString);
-    }
-
-    private void DeserializeLevel(string jsonString)
-    {
-        // Check if the JSON string is not empty
-        if (string.IsNullOrEmpty(jsonString))
-        {
-            Debug.LogError("JSON string is null or empty.");
+            Destroy(gameObject);
             return;
         }
 
-        // Deserialize the JSON string into our C# object
-        currentLevelData = JsonUtility.FromJson<LevelData>(jsonString);
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
 
-        if (currentLevelData != null)
-        {
-            Debug.Log("Successfully loaded level: " + currentLevelData.levelNumber);
-            // You can now access and manipulate the data
-            Debug.Log("Level: " + currentLevelData.levelNumber);
-            //awakeLevel.text = currentLevelData.levelNumber+"";
-        }
-        else
-        {
-            Debug.LogError("Failed to deserialize JSON data.");
-        }
+        // 2. Load the saved data immediately using PlayerPrefs
+        LoadSavedLevelData();
     }
 
+    // --- PUBLIC ACCESSORS AND MUTATORS ---
 
+    // Retrieves the current unlocked level from memory.
+    public int getCurrentLevel()
+    {
+        return currentLevelNumber;
+    }
+
+    // Increments the level number in memory.
     public void AddLevelData()
     {
-        if (currentLevelData != null)
-        {
-            // Access and modify the data
-            currentLevelData.levelNumber++;
-            Debug.Log("Updated the level to: " + currentLevelData.levelNumber);
-        }
+        currentLevelNumber++;
+        Debug.Log("Updated the level to: " + currentLevelNumber);
     }
 
+    // Resets the level to 1 in memory.
     public void ResetLevelData()
     {
-        if (currentLevelData != null)
-        {
-            // Access and modify the data
-            currentLevelData.levelNumber = 1;
-            Debug.Log("Updated the level to: " + currentLevelData.levelNumber);
-        }
+        currentLevelNumber = 1;
+        Debug.Log("Reset the level to: " + currentLevelNumber);
     }
+
+    // --- SAVE/LOAD IMPLEMENTATION (PlayerPrefs) ---
 
     public void SaveLevelData()
     {
-        // Serialize the C# object back to a JSON string
-        string jsonString = JsonUtility.ToJson(currentLevelData, true); // `true` for pretty printing
+        // 1. Set the integer value to be saved
+        PlayerPrefs.SetInt(LevelKey, currentLevelNumber);
 
-        // Define the save path for the persistent data
-        string savePath = Path.Combine(Application.persistentDataPath, levelFileName);
+        // 2. Write the data to the device's disk (CRITICAL step for mobile)
+        PlayerPrefs.Save();
 
-        // Write the JSON string to a file
-        try
-        {
-            File.WriteAllText(savePath, jsonString);
-            Debug.Log("Successfully saved level data to: " + savePath);
-        }
-        catch (System.Exception ex)
-        {
-            Debug.LogError("Failed to save level data: " + ex.Message);
-        }
+        Debug.Log($"Level Saved successfully via PlayerPrefs: {currentLevelNumber}");
     }
 
     public void LoadSavedLevelData()
     {
-        string savePath = Path.Combine(Application.persistentDataPath, levelFileName);
+        // PlayerPrefs.GetInt(key, defaultValue)
+        // It retrieves the stored value. If the key doesn't exist (first run), 
+        // it returns the specified default value (1).
+        currentLevelNumber = PlayerPrefs.GetInt(LevelKey, 1);
 
-        if (File.Exists(savePath))
-        {
-            try
-            {
-                string jsonString = File.ReadAllText(savePath);
-                DeserializeLevel(jsonString);
-                Debug.Log("Successfully loaded saved level data.");
-            }
-            catch (System.Exception ex)
-            {
-                Debug.LogError("Failed to load saved level data: " + ex.Message);
-            }
-        }
-        else
-        {
-            Debug.Log("No saved data found. Loading from original levels.json.");
-            // Fallback to loading from StreamingAssets
-            StartCoroutine(LoadLevelData());
-        }
+        Debug.Log($"Level Loaded successfully via PlayerPrefs: {currentLevelNumber}");
     }
 
-    public int getCurrentLevel()
-    {
-        LoadSavedLevelData();
-        return currentLevelData.levelNumber;
-    }
+    // --- The unnecessary JSON/File I/O methods (LoadLevelData, SaveLevelData, etc.) are removed ---
+
+    // Note: The [System.Serializable] LevelData class is also no longer needed 
+    // since we're saving a direct integer.
 }
-

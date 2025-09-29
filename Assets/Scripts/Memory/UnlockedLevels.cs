@@ -9,13 +9,14 @@ public class UnlockedLevels : MonoBehaviour
 {
     public TextMeshProUGUI two, three, four, five, six, seven, eight, nine, ten;
     public Image lock2, lock3, lock4, lock5, lock6, lock7, lock8, lock9, lock10;
-    public LevelManager levelManager;
+    
 
-    [System.Serializable]
+    /*[System.Serializable]
     public class PlayerData
     {
         public int level;
     }
+    */
 
     void Start()
     {
@@ -42,8 +43,13 @@ public class UnlockedLevels : MonoBehaviour
         // 3. Deserialize the JSON string into a PlayerData object
         PlayerData data = JsonUtility.FromJson<PlayerData>(jsonData);
         */
-        
-        int level = levelManager.getCurrentLevel();
+        if (LevelManager.Instance == null)
+        {
+            Debug.Log("Waiting for LevelManager...");
+            return;
+        }
+
+        int level = LevelManager.Instance.getCurrentLevel();
 
         if (level < 2)
         {
