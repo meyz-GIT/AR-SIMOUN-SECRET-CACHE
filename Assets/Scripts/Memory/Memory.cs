@@ -93,7 +93,7 @@ public class Memory : MonoBehaviour
         Debug.Log("JSON file updated successfully!");
     }
 
-    public void resetLevels()
+    /*public void resetLevels()
     {
         PlayerData playerData = new PlayerData();
         playerData.level = 0;
@@ -102,5 +102,16 @@ public class Memory : MonoBehaviour
         Debug.Log(json);
 
         File.WriteAllText(Application.persistentDataPath + "/PlayerData.json", json);
+    }
+
+    */
+
+    public void ResetLevel()
+    {
+        
+            LevelManager.Instance.ResetLevelData();
+            LevelManager.Instance.SaveLevelData();
+        
+        
     }
 }

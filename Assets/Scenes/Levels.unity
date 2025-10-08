@@ -566,6 +566,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remindPanel: {fileID: 1955398292}
+--- !u!1001 &458377712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 451715413198909912, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442310072010235398, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
+      propertyPath: m_Name
+      value: _GlobalClickDetector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d23aa6f18504c540862aee9a67c3dd8, type: 3}
 --- !u!1 &480839435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,18 +2985,6 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2109349482}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1178159713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5107,6 +5152,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1779354725}
   - {fileID: 1804823626}
+  - {fileID: 458377712}
   - {fileID: 1109710056}
   - {fileID: 1079344709}
   - {fileID: 2109349483}
