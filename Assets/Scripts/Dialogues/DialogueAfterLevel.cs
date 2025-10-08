@@ -83,17 +83,33 @@ public class DialogueAfterLevel : MonoBehaviour
 
             if (level == currentlvl)
             {
-                // Level Progression Logic
-                LevelManager.Instance.AddLevelData();
-                LevelManager.Instance.SaveLevelData();
-                Debug.Log("DEBUG 3A: Progression successful. Loading Levels scene.");
-                SceneManager.LoadScene("Levels");
+                if (level == 10)
+                {
+                    SceneManager.LoadScene("EndingStory");
+                    LevelManager.Instance.AddLevelData();
+                    LevelManager.Instance.SaveLevelData();
+                }
+                else
+                {
+                    // Level Progression Logic
+                    LevelManager.Instance.AddLevelData();
+                    LevelManager.Instance.SaveLevelData();
+                    Debug.Log("DEBUG 3A: Progression successful. Loading Levels scene.");
+                    SceneManager.LoadScene("Levels");
+                }
             }
             else
             {
-                // Replay Logic
-                Debug.Log("DEBUG 3B: Replay detected. Loading Levels scene.");
-                SceneManager.LoadScene("Levels");
+                if (level == 10)
+                {
+                    SceneManager.LoadScene("EndingStory");
+                }
+                else
+                {
+                    // Replay Logic
+                    Debug.Log("DEBUG 3B: Replay detected. Loading Levels scene.");
+                    SceneManager.LoadScene("Levels");
+                }
             }
         }
     }
