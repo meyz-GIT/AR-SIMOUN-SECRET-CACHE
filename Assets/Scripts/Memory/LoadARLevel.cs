@@ -46,7 +46,7 @@ public class LoadARLevels : MonoBehaviour
                 }
                 else if (levelnum.Equals("7 (TMPro.TextMeshProUGUI)"))
                 {
-                    SceneManager.LoadScene("Level1");
+                    SceneManager.LoadScene("Level7");
                 }
                 else if (levelnum.Equals("8 (TMPro.TextMeshProUGUI)"))
                 {
