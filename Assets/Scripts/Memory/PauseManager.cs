@@ -1,10 +1,11 @@
 using UnityEngine;
-using UnityEngine.XR.ARFoundation; 
+using UnityEngine.XR.ARFoundation;
 
 public class PauseManager : MonoBehaviour
 {
-    
     [SerializeField] private ARSession arSession;
+
+    [SerializeField] private ArPositioner arPositioner; 
 
     private bool isPaused = false;
 
@@ -14,8 +15,12 @@ public class PauseManager : MonoBehaviour
         {
             Debug.LogError("AR Session not assigned to PauseManager!");
         }
+        if (arPositioner == null)
+        {
+            Debug.LogError("Ar Positioner not assigned to PauseManager!");
+        }
     }
-
+    
     public void TogglePause()
     {
         isPaused = !isPaused;
@@ -41,89 +46,26 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+
     private void ResumeGameAndAR()
     {
         if (arSession != null)
         {
-            arSession.enabled = true; // Restores AR tracking and camera updates
+            arSession.enabled = true; 
+        }
+
+        
+        if (arPositioner != null && arPositioner.hasplaced)
+        {
+            arPositioner.planeManager.enabled = false;
+            foreach (var p in arPositioner.planeManager.trackables)
+            {
+                p.gameObject.SetActive(false);
+            }
+            Debug.Log("Planes re-hidden after resuming AR Session.");
         }
 
         Time.timeScale = 1f;
         Debug.Log("Game Resumed.");
     }
 }
-
-
-//using Unity.XR.CoreUtils;
- //using UnityEngine;
- //using UnityEngine.XR.ARFoundation;
-
-
-//public class PauseManager : MonoBehaviour
-//{
-//    [SerializeField] private XROrigin xrOrigin;
-
-//    private ARCameraManager arCameraManager;
-
-//    private bool isPaused = false;
-
-//    void Start()
-//    {
-//        // Safety check
-//        if (xrOrigin == null)
-//        {
-//            Debug.LogError("XR Origin not assigned to PauseManager!");
-//            return;
-//        }
-
-//        // The ARCameraManager is usually on the Camera component within the XROrigin
-//        arCameraManager = xrOrigin.GetComponentInChildren<ARCameraManager>();
-
-//        if (arCameraManager == null)
-//        {
-//            Debug.LogError("AR Camera Manager not found on XR Origin children!");
-//        }
-//    }
-
-//    // This function will be called by your UI Button
-//    public void TogglePause()
-//    {
-//        isPaused = !isPaused;
-
-//        if (isPaused)
-//        {
-//            PauseGameAndAR();
-//        }
-//        else
-//        {
-//            ResumeGameAndAR();
-//        }
-//    }
-
-//    private void PauseGameAndAR()
-//    {
-//        // 1. Freeze game logic (Optional, but standard for pausing)
-//        Time.timeScale = 0f;
-//        Debug.Log("Game Paused");
-
-//        // 2. Freeze the AR Camera Feed and Tracking
-//        if (arCameraManager != null)
-//        {
-//            // Disabling the ARCameraManager freezes the video background and tracking updates
-//            arCameraManager.enabled = false;
-//        }
-//    }
-
-//    private void ResumeGameAndAR()
-//    {
-//        // 1. Unfreeze the AR Camera Feed and Tracking first
-//        if (arCameraManager != null)
-//        {
-//            arCameraManager.enabled = true;
-//        }
-
-//        // 2. Unfreeze game logic
-//        Time.timeScale = 1f;
-//        Debug.Log("Game Resumed");
-//    }
-//}

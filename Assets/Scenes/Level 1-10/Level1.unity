@@ -6314,6 +6314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arSession: {fileID: 1167446572}
+  arPositioner: {fileID: 1154321089}
 --- !u!1001 &727142278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9503,6 +9504,7 @@ Transform:
   - {fileID: 979996910}
   - {fileID: 175733251}
   - {fileID: 278388676}
+  - {fileID: 1752085488}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1024256103
@@ -15554,7 +15556,7 @@ Transform:
   m_GameObject: {fileID: 1752085487}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.76, y: -2.19, z: 0}
+  m_LocalPosition: {x: 4.76, y: -1.4000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15564,7 +15566,7 @@ Transform:
   - {fileID: 1491819472}
   - {fileID: 649017451}
   - {fileID: 770381785}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1020663557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1765540924 stripped
 Transform:
@@ -18794,10 +18796,9 @@ SceneRoots:
   - {fileID: 2512387470422636640}
   - {fileID: 1167446573}
   - {fileID: 410087041}
+  - {fileID: 1154321090}
   - {fileID: 725021251}
   - {fileID: 1020663557}
-  - {fileID: 1154321090}
   - {fileID: 1992601014}
   - {fileID: 1500951762}
   - {fileID: 1874065806}
-  - {fileID: 1752085488}
