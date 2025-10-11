@@ -6343,7 +6343,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -9256,8 +9256,8 @@ Transform:
   m_GameObject: {fileID: 1139243907}
   serializedVersion: 2
   m_LocalRotation: {x: -0.2236312, y: 0.9744652, z: 0.0061431057, w: 0.019208798}
-  m_LocalPosition: {x: -4.402, y: 0.696, z: 5.256}
-  m_LocalScale: {x: 0.003695, y: 0.16272196, z: 0.38705757}
+  m_LocalPosition: {x: -4.445, y: 0.776, z: 5.358}
+  m_LocalScale: {x: 0.003695, y: 0.23589803, z: 0.6559852}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384223913}
@@ -9364,7 +9364,7 @@ Transform:
   m_GameObject: {fileID: 1167446570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.115, z: 0}
+  m_LocalPosition: {x: -1.93, y: -0.115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17928,7 +17928,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 20
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -18063,13 +18063,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2512387468973847775}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.056511283, y: 0.30062157, z: -0.04414864, w: 0.95104367}
-  m_LocalPosition: {x: -75.89, y: 2.04, z: 25.97}
+  m_LocalRotation: {x: 0.00158079, y: 0.9969647, z: -0.0758114, w: 0.017653061}
+  m_LocalPosition: {x: -1.901, y: -0.01, z: 0.022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2512387470860572925}
-  m_LocalEulerAnglesHint: {x: 7.703, y: 34.888, z: -2.892}
+  m_Father: {fileID: 2512387470422636640}
+  m_LocalEulerAnglesHint: {x: 8.698, y: 177.973, z: 0.028}
 --- !u!1 &2512387468973847775
 GameObject:
   m_ObjectHideFlags: 0
@@ -18173,6 +18173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2512387468973847774}
   - {fileID: 2512387470860572925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18238,7 +18239,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2512387468973847774}
   - {fileID: 1765540924}
   m_Father: {fileID: 2512387470422636640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18327,8 +18327,8 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 2512387470422636640}
   - {fileID: 1167446573}
+  - {fileID: 2512387470422636640}
   - {fileID: 410087041}
   - {fileID: 384223913}
   - {fileID: 200252034}

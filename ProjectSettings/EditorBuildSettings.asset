@@ -23,28 +23,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1-10/Level2.unity
     guid: adba9611e3639904a963bfe5030f9540
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level3.unity
     guid: a0d1fc0b21f66c14fa179293470c1d0f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level4.unity
     guid: 37b3e4c1ab3a9a145a512c1a1ddfc934
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level5.unity
     guid: ee4d3a932dc43fd4caf7e7f221858736
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level6.unity
     guid: 64cfdc1860717624d8d198c157a54fae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level7.unity
     guid: ebfc683769cf7b049bc3ed0a411fdf37
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level8.unity
     guid: 1a819d226b4c6e44d8ab91e413f07628
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level9.unity
     guid: 00fe21b104213984596fe73ef0411b82
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1-10/Level10.unity
     guid: fb2f716eb7685fd468f3e90cc09c4df3
   - enabled: 1
@@ -56,28 +56,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl3.unity
     guid: c89f07344cfcbc340ac6d774d7c3f4e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl4.unity
     guid: d4554ed68e61c9246bf41dbc8485c26a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl5.unity
     guid: 0cfd02b0296b25441a3669c1688015ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl6.unity
     guid: 5e799632013911a46853b0a7a2cdc406
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl7.unity
     guid: 998d58bbb6a6a1c4aaa0daa37f7b5f0a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl8.unity
     guid: feca32e1a2183f94780110f422b75654
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl9.unity
     guid: 520d44613a47f2f479147a8c70531714
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AfterLevelDialogues/DialogueLvl10.unity
     guid: bed0dd6817203464699f481901fef455
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndingStory.unity
     guid: 4b9a30cbb4e2617408d397848295bf68
   m_configObjects:
