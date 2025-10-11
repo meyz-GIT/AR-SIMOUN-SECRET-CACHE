@@ -67,7 +67,7 @@ public class UIMusicSwitch : MonoBehaviour
     /// </summary>
     public void OnSwitchClicked()
     {
-        Time.timeScale = 1f;
+        
         if (!isInitialized) return;
 
         // 1. Toggle the internal state
@@ -82,11 +82,12 @@ public class UIMusicSwitch : MonoBehaviour
         // 3. Animate the handle to the new position
         StopAllCoroutines();
         StartCoroutine(AnimateHandle(isMuted));
-        Time.timeScale = 0f;
+        
     }
 
     private IEnumerator AnimateHandle(bool targetIsMuted)
     {
+        Time.timeScale = 1f;
         float targetX = targetIsMuted ? offPositionX : onPositionX;
         Vector2 startPosition = handleRectTransform.anchoredPosition;
         Vector2 targetPosition = new Vector2(targetX, startPosition.y);
@@ -101,5 +102,6 @@ public class UIMusicSwitch : MonoBehaviour
         }
 
         handleRectTransform.anchoredPosition = targetPosition;
+        Time.timeScale = 1f;
     }
 }
