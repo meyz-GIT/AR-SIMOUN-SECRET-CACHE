@@ -63,6 +63,7 @@ public class UISFXSwitch : MonoBehaviour
     /// </summary>
     public void OnSwitchClicked()
     {
+        Time.timeScale = 1f;
         if (!isInitialized) return;
 
         // 1. Toggle the internal state
@@ -77,6 +78,7 @@ public class UISFXSwitch : MonoBehaviour
         // 3. Animate the handle to the new position
         StopAllCoroutines();
         StartCoroutine(AnimateHandle(isMuted));
+        Time.timeScale = 0f;
     }
 
     private IEnumerator AnimateHandle(bool targetIsMuted)
