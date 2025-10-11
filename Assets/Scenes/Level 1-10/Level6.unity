@@ -4267,7 +4267,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1623779456}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 28d71a28d5a1a164087bc7090332281d, type: 3}
       propertyPath: m_LocalScale.x
@@ -4283,15 +4283,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28d71a28d5a1a164087bc7090332281d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.0942426
+      value: -5.7342424
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28d71a28d5a1a164087bc7090332281d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.58471817
+      value: 0.8252818
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28d71a28d5a1a164087bc7090332281d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5372713
+      value: 0.7827287
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28d71a28d5a1a164087bc7090332281d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4376,6 +4376,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3444320215933520709, guid: 28d71a28d5a1a164087bc7090332281d, type: 3}
+--- !u!4 &504517668 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 28d71a28d5a1a164087bc7090332281d, type: 3}
+  m_PrefabInstance: {fileID: 504517664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &535663331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11172,6 +11177,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5224299588504295428, guid: b3f6fbe225e78ce4c81a2adb6f9a49d2, type: 3}
   m_PrefabInstance: {fileID: 1312146045}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1325738495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325738497}
+  - component: {fileID: 1325738496}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1325738496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325738495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d159546efa2544eab35fecb70e5d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arscene: {fileID: 1623779455}
+  arorg: {fileID: 2512387470422636641}
+  planeManager: {fileID: 2512387470422636670}
+  hasplaced: 0
+--- !u!4 &1325738497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325738495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.39586, y: 32.79326, z: -11.618485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1350610812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13182,6 +13235,7 @@ Transform:
   - {fileID: 1296437474}
   - {fileID: 1110321531}
   - {fileID: 957689116}
+  - {fileID: 504517668}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1632039375
@@ -18706,6 +18760,7 @@ GameObject:
   - component: {fileID: 2512387470422636640}
   - component: {fileID: 2512387470422636641}
   - component: {fileID: 2512387470422636642}
+  - component: {fileID: 2512387470422636670}
   m_Layer: 0
   m_Name: XR Origin (AR Rig)
   m_TagString: Untagged
@@ -18713,6 +18768,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2512387470422636670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512387470422636669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlanePrefab: {fileID: 4712475050021862207, guid: 5da0550396c63f04794858d18cfa73bc, type: 3}
+  m_DetectionMode: -1
 --- !u!4 &2512387470860572925
 Transform:
   m_ObjectHideFlags: 0
@@ -18817,9 +18886,9 @@ SceneRoots:
   - {fileID: 1167446573}
   - {fileID: 2512387470422636640}
   - {fileID: 410087041}
+  - {fileID: 1325738497}
   - {fileID: 1385520306}
   - {fileID: 1623779456}
   - {fileID: 1579208066}
   - {fileID: 1667208781}
   - {fileID: 589728179}
-  - {fileID: 504517664}
