@@ -6371,6 +6371,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8572367527113950099, guid: fc5dae08b5aee744ca1270f9d5dcd212, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8806299827801800388, guid: fc5dae08b5aee744ca1270f9d5dcd212, type: 3}
       propertyPath: m_Name
       value: Prop_Sofa_02_B
@@ -9335,7 +9339,7 @@ Transform:
   m_GameObject: {fileID: 1139243907}
   serializedVersion: 2
   m_LocalRotation: {x: -0.2236312, y: 0.9744652, z: 0.0061431057, w: 0.019208798}
-  m_LocalPosition: {x: -4.445, y: 0.776, z: 5.358}
+  m_LocalPosition: {x: -4.119, y: 0.76, z: 5.426}
   m_LocalScale: {x: 0.003695, y: 0.23589803, z: 0.6559852}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18302,8 +18306,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2512387468973847774}
   - {fileID: 2512387470860572925}
+  - {fileID: 2512387468973847774}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2512387470422636641
@@ -18363,7 +18367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2512387470422636669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
