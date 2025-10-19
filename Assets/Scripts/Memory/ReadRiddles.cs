@@ -8,91 +8,13 @@ using UnityEngine.UI;
 
 public class ReadRiddles : MonoBehaviour
 {
-    /*
-        // Assign in the Unity Inspector
-    public TextMeshProUGUI riddleText;
-    public TextMeshProUGUI firstWordText;
-    public Button nextButton;
-    public TextAsset jsonFile;
 
-    private string[] lines;
-    private int currentIndex = 0;
-
-    void Start()
-    {
-        // Check if the JSON file is assigned
-        if (jsonFile == null)
-        {
-            Debug.LogError("JSON file is not assigned to the script.");
-            return;
-        }
-
-        // Read the file and split into lines, removing any empty lines
-        lines = jsonFile.text.Split(new[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
-
-        // Add a listener to the button to trigger the display of the next line
-        nextButton.onClick.AddListener(DisplayNextRiddle);
-
-        // Display the first riddle upon starting
-        if (lines.Length > 0)
-        {
-            DisplayRiddle(currentIndex);
-        }
-    }
-
-    void DisplayNextRiddle()
-    {
-        // Move to the next index, wrapping around to 0 if at the end of the array
-        currentIndex = (currentIndex + 1) % lines.Length;
-        DisplayRiddle(currentIndex);
-    }
-
-    void DisplayRiddle(int index)
-    {
-        // Ensure the index is valid
-        if (index < 0 || index >= lines.Length)
-        {
-            return;
-        }
-
-        string fullLine = lines[index];
-        string[] words = fullLine.Split(' ');
-
-        if (words.Length > 1)
-        {
-            // The first word is displayed in the firstWordText object
-            firstWordText.text = words[0];
-
-            // The rest of the line is displayed in the riddleText object
-            // Join the remaining words back together with spaces
-            string remainingRiddle = string.Join(" ", words, 1, words.Length - 1);
-            riddleText.text = remainingRiddle;
-        }
-        else
-        {
-            // If there's only one word or the line is empty, clear both text objects
-            firstWordText.text = "";
-            riddleText.text = fullLine;
-        }
-    }
-    
-     
-Ship I have a deck, but I'm not a card game. I'm made of steel, but I can float. What am I? 
-RubberDuck I quack, but I'm not a frog. I have feathers, but I'm not a chicken. I can swim, but I'm not a fish. What am I? 
-DeepPan I get hot when I'm on the fire, but I don't feel pain. I have a belly and a handle, but no arms or legs. What am I? 
-Beer I can be bitter or sweet. I'm often a golden color and served cold in a glass. People raise a toast to me. What am I? 
-Rock I'm hard and gray, and you can find me anywhere. I'm older than you, but I don't have a birthday. What am I? 
-Money I can be earned, but I can't be bought. I can be spent, but I can't be used. What am I?
- 
-*/
-
-    public TextMeshProUGUI riddleText, firstWordText, winMessage, answer, message;
+    public TextMeshProUGUI riddleText, firstWordText, winMessage, answer, message, pageNumber;
     public Button nextButton;
     public TextAsset jsonFile;
     public GameObject confirmationPanel, riddleBookPanel, pausePanel;
     public string sceneName;
 
-    // Change from array to a List for easy removal
     private List<string> riddles;
     private int currentIndex = 0;
 
@@ -117,22 +39,22 @@ Money I can be earned, but I can't be bought. I can be spent, but I can't be use
 
     void DisplayNextRiddle()
     {
-        // Wrap around if all riddles are completed
         if (riddles.Count == 0)
         {
             confirmationPanel.SetActive(true);
             winMessage.SetText("You've solved all the riddles!");
             riddleText.text = "You've solved all the riddles!";
             firstWordText.text = "";
+
+            UpdatePageNumberDisplay();
             return;
         }
         
-        // Move to the next index, wrapping around
         currentIndex = (currentIndex + 1) % riddles.Count;
         DisplayRiddle(currentIndex);
+
     }
 
-    // Public method to be called by other scripts
     public void RemoveCurrentRiddle()
     {
         if (riddles.Count > 0)
@@ -151,11 +73,29 @@ Money I can be earned, but I can't be bought. I can be spent, but I can't be use
         }
     }
 
+    private void UpdatePageNumberDisplay()
+    {
+        if (pageNumber == null) return; //Safety
+
+        if (riddles.Count == 0)
+        {
+            // Display an empty or "0/0" count if the list is empty
+            pageNumber.text = "0/0";
+            return;
+        }
+
+        int currentPage = currentIndex + 1;
+
+        // Total Pages
+        int totalPages = riddles.Count;
+
+        pageNumber.text = $"{currentPage}/{totalPages}";
+    }
     void DisplayRiddle(int index)
     {
         if (riddles.Count == 0 || index < 0 || index >= riddles.Count)
         {
-            
+            UpdatePageNumberDisplay();
             return;
         }
 
@@ -178,6 +118,7 @@ Money I can be earned, but I can't be bought. I can be spent, but I can't be use
             firstWordText.text = "";
             riddleText.text = fullLine;
         }
+        UpdatePageNumberDisplay();
     }
 
     public void playAnimation()
@@ -198,7 +139,8 @@ Money I can be earned, but I can't be bought. I can be spent, but I can't be use
 
     public void openRiddleBook()
     {
-        if (message.Equals("Nice, that's it! You got the answer to the riddle right. Now, on to the next one!"))
+        if (message.Equals("Nice, that's it! You got the answer to the riddle right. Now, on to the next one!") ||
+            winMessage.Equals("Nice, that's it! You got the answer to the riddle right. Now, on to the next one!"))
         {
             riddleBookPanel.SetActive(true);
         }
