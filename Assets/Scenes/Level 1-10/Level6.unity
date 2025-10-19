@@ -5812,6 +5812,74 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7401760573918082911, guid: 2149e3d7d9277c044a0d3014e640524f, type: 3}
+--- !u!1 &710561702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710561704}
+  - component: {fileID: 710561703}
+  - component: {fileID: 710561705}
+  m_Layer: 0
+  m_Name: Pancit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &710561703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710561702}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.3, z: 1.2}
+  m_Center: {x: -0.5, y: 0.2, z: 0.4}
+--- !u!4 &710561704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710561702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.96, y: -1.341, z: 4.4679017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1635058973}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710561705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710561702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleManager: {fileID: 589728175}
 --- !u!1 &728556179
 GameObject:
   m_ObjectHideFlags: 0
@@ -13278,7 +13346,6 @@ Transform:
   - {fileID: 1005050362}
   - {fileID: 503544575}
   - {fileID: 674154374}
-  - {fileID: 1635058973}
   - {fileID: 2032011373}
   - {fileID: 637876602}
   - {fileID: 1713197677}
@@ -13506,7 +13573,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1623779456}
+    m_TransformParent: {fileID: 710561704}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_LocalScale.x
@@ -13522,15 +13589,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.706
+      value: -0.60040903
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.319
+      value: -0.23297942
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.207
+      value: 0.41909838
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13562,7 +13629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8667184578498139821, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_Name
-      value: Pancit
+      value: Pancit1
       objectReference: {fileID: 0}
     - target: {fileID: -5008456200197934581, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -13570,11 +13637,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d883639f1735f11498b8adf29e38706b, type: 2}
     - target: {fileID: -3446502205970640491, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_Name
-      value: Pancit
+      value: Pancit1
       objectReference: {fileID: 0}
     - target: {fileID: -3086944861826413830, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_Name
-      value: Pancit
+      value: Pancit1
       objectReference: {fileID: 0}
     - target: {fileID: -1372456973505535881, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -13590,7 +13657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783464644124936822, guid: 9089497936c9f3a449231c709a5b44e7, type: 3}
       propertyPath: m_Name
-      value: Pancit
+      value: Pancit1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19080,3 +19147,4 @@ SceneRoots:
   - {fileID: 1579208066}
   - {fileID: 1667208781}
   - {fileID: 589728179}
+  - {fileID: 710561704}
