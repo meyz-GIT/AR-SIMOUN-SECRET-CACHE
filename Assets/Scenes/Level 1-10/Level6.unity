@@ -9311,6 +9311,74 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5063345709984736198, guid: 3d6813fe74e7c7b459184cb00afcb1ca, type: 3}
+--- !u!1 &1050242256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1050242257}
+  - component: {fileID: 1050242258}
+  - component: {fileID: 1050242259}
+  m_Layer: 0
+  m_Name: Crab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1050242257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050242256}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2032011373}
+  m_Father: {fileID: 1623779456}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1050242258
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050242256}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.689183, y: 0.32900095, z: 0.5726452}
+  m_Center: {x: 0.6269349, y: 0.5294002, z: 9.274581}
+--- !u!114 &1050242259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050242256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleManager: {fileID: 589728175}
 --- !u!1001 &1058079653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13614,7 +13682,6 @@ Transform:
   - {fileID: 1005050362}
   - {fileID: 503544575}
   - {fileID: 674154374}
-  - {fileID: 2032011373}
   - {fileID: 637876602}
   - {fileID: 1713197677}
   - {fileID: 1146061078}
@@ -13713,6 +13780,7 @@ Transform:
   - {fileID: 1110321531}
   - {fileID: 957689116}
   - {fileID: 504517668}
+  - {fileID: 1050242257}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1632039375
@@ -17592,15 +17660,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1623779456}
+    m_TransformParent: {fileID: 1050242257}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 652cc1954b356c2409a0be8d6619e706, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.39
+      value: 2.3900003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 652cc1954b356c2409a0be8d6619e706, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.111
+      value: 0.11100006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 652cc1954b356c2409a0be8d6619e706, type: 3}
       propertyPath: m_LocalPosition.z

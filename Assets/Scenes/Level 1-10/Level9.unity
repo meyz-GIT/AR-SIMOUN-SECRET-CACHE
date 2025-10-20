@@ -266,6 +266,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13381713}
   m_CullTransparentMesh: 1
+--- !u!1 &21466635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 21466636}
+  - component: {fileID: 21466638}
+  - component: {fileID: 21466637}
+  m_Layer: 0
+  m_Name: Horse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &21466636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21466635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 317810120}
+  m_Father: {fileID: 1207289953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &21466637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21466635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleManager: {fileID: 475523081}
+--- !u!65 &21466638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21466635}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8055115, y: 1.6622727, z: 1.7728975}
+  m_Center: {x: 3.1972651, y: 0.33113647, z: -4.5977383}
 --- !u!1001 &24463933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2526,6 +2594,74 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1704840932576665267, guid: 6f1ba13067cf3d544b2ef1b4b2082b9e, type: 3}
+--- !u!1 &314797653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 314797654}
+  - component: {fileID: 314797655}
+  - component: {fileID: 314797656}
+  m_Layer: 0
+  m_Name: Bullet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &314797654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314797653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 634205414}
+  m_Father: {fileID: 1207289953}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &314797655
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314797653}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.16412401, y: 0.08458042, z: 0.26548958}
+  m_Center: {x: 0.61092794, y: 0.04799664, z: 9.895108}
+--- !u!114 &314797656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314797653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d88d5c1987ab346b16e33550014f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleManager: {fileID: 475523081}
 --- !u!4 &317810120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4c2e284a582f9de4b94559d3ae55693b, type: 3}
@@ -4451,19 +4587,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1207289953}
+    m_TransformParent: {fileID: 314797654}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 621484fc31660e349b2913f1e5370473, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 621484fc31660e349b2913f1e5370473, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 621484fc31660e349b2913f1e5370473, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 621484fc31660e349b2913f1e5370473, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4471,7 +4607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 621484fc31660e349b2913f1e5370473, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.081
+      value: 0.08099997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 621484fc31660e349b2913f1e5370473, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7600,7 +7736,6 @@ Transform:
   - {fileID: 1209212840}
   - {fileID: 1391620010}
   - {fileID: 2049435700}
-  - {fileID: 634205414}
   - {fileID: 1263901019}
   - {fileID: 880001928}
   - {fileID: 1693695431}
@@ -7649,8 +7784,9 @@ Transform:
   - {fileID: 2047444827}
   - {fileID: 1770540773}
   - {fileID: 1145910835}
-  - {fileID: 317810120}
   - {fileID: 923216577}
+  - {fileID: 314797654}
+  - {fileID: 21466636}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1209212839
@@ -8506,7 +8642,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1207289953}
+    m_TransformParent: {fileID: 21466636}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4c2e284a582f9de4b94559d3ae55693b, type: 3}
       propertyPath: m_LocalScale.x
@@ -13013,6 +13149,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3bfd945a6073fe459905ebc8501bd59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1785855492}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3bfd945a6073fe459905ebc8501bd59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1785855496}
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: f3bfd945a6073fe459905ebc8501bd59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1785855495}
@@ -13060,7 +13199,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -13100,6 +13239,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   riddleManager: {fileID: 475523081}
+--- !u!65 &1785855496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785855490}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 354.44144, y: 296.1746, z: 306.04846}
+  m_Center: {x: 2.6972291, y: 36.520805, z: -15.261156}
 --- !u!1001 &1799409991
 PrefabInstance:
   m_ObjectHideFlags: 0
