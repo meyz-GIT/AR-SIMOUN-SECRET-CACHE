@@ -50,44 +50,30 @@ public class SFXManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Loads the mute preference from PlayerPrefs and applies it to the master volume.
-    /// </summary>
     private void LoadSFXState()
     {
         // Default value is 0 (false/unmuted) if the key doesn't exist.
         bool isMuted = PlayerPrefs.GetInt(MuteKey, 0) == 1;
 
         // AudioListener.volume controls ALL sound. 
-        AudioListener.volume = isMuted ? 0f : 1f;
+        sfxAudioSource.volume = isMuted ? 0f : 1f;
     }
 
-    /// <summary>
-    /// Toggles the SFX state (mute/unmute) and saves the preference.
-    /// </summary>
-    /// <param name="isMuted">True to mute SFX, False to unmute them.</param>
     public void ToggleSFX(bool isMuted)
     {
         // Set the global volume.
-        AudioListener.volume = isMuted ? 0f : 1f;
+        sfxAudioSource.volume = isMuted ? 0f : 1f;
 
         // Save the new state: 1 for muted, 0 for unmuted.
         PlayerPrefs.SetInt(MuteKey, isMuted ? 1 : 0);
         PlayerPrefs.Save();
     }
 
-    /// <summary>
-    /// Public method to play the assigned global click SFX.
-    /// </summary>
     public void PlayGlobalClickSFX()
     {
         PlaySFX(globalClickSFX);
     }
 
-    /// <summary>
-    /// Public method to play a single sound effect from anywhere in the game.
-    /// </summary>
-    /// <param name="clip">The AudioClip to play.</param>
     public void PlaySFX(AudioClip clip)
     {
         if (clip != null && sfxAudioSource != null)
@@ -97,9 +83,6 @@ public class SFXManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Returns the current mute status (True if muted, False if playing).
-    /// </summary>
     public bool IsMuted()
     {
         return PlayerPrefs.GetInt(MuteKey, 0) == 1;
