@@ -114,4 +114,22 @@ public class Memory : MonoBehaviour
         
         
     }
+
+    public void UnlockAllLevel()
+    {
+
+        LevelManager.Instance.UnlockAllLevels();
+        LevelManager.Instance.SaveLevelData();
+
+
+    }
+
+    public void UnlockLevel5()
+    {
+
+        LevelManager.Instance.UnlockLevel5();
+        LevelManager.Instance.SaveLevelData();
+
+
+    }
 }

@@ -52,6 +52,18 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Reset the level to: " + currentLevelNumber);
     }
 
+    public void UnlockAllLevels()
+    {
+        currentLevelNumber = 11;
+        Debug.Log("Unlock all level ");
+    }
+
+    public void UnlockLevel5()
+    {
+        currentLevelNumber = 5;
+        Debug.Log("Unlock all level ");
+    }
+
     // --- SAVE/LOAD IMPLEMENTATION (PlayerPrefs) ---
 
     public void SaveLevelData()
