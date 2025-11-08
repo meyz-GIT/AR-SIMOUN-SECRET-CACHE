@@ -6,54 +6,22 @@ using UnityEngine.EventSystems;
 
 public class ClickedItem : MonoBehaviour
 {
-    /*public TextMeshProUGUI answer, message;
-    private string currentItem;
-    public GameObject confirmationPanel;
-
-    private void Start()
-    {
-        
-    }
-
-    private void OnMouseDown()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        
-
-        // Check if the ray hits a collider
-        if (Physics.Raycast(ray, out hit))
-        {
-            // Get the GameObject that was hit and print its name to the console
-            Debug.Log("Clicked object name: " + hit.collider.gameObject.name);
-
-            // Get the answer
-            currentItem = answer.text;
-            if (currentItem.Equals(hit.collider.gameObject.name))
-            {
-                confirmationPanel.SetActive(true);
-                message.SetText("Nice, that's it! You got the answer to the riddle right. Now, on to the next one!");
-
-            }
-            else
-            {
-                confirmationPanel.SetActive(true);
-                message.SetText("That's not it, but don't give up! Look closely at the riddle again—the answer is hiding in plain sight. Think carefully and try a different item.");
-            }
-        }
-
-
-    }*/
-
+    public static bool InteractionEnabled = false;
 
     private string currentItem;
     
-
-    // Add a reference to the ReadRiddles script
     public ReadRiddles riddleManager;
 
     private void OnMouseDown()
     {
+        if (!InteractionEnabled)
+        {
+            riddleManager.confirmationPanel.SetActive(true);
+            riddleManager.message.SetText("Open riddle book first!");
+            Debug.Log("Interaction is currently disabled. Click 'FIND THIS ITEM' first.");
+            return;
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -63,7 +31,6 @@ public class ClickedItem : MonoBehaviour
         }
         else
         {
-
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log("Clicked object name: " + hit.collider.gameObject.name);

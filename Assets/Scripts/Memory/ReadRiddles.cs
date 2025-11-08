@@ -153,5 +153,11 @@ public class ReadRiddles : MonoBehaviour
         public int level;
     }
 
+    public void EnableInteraction()
+    {
+        ClickedItem.InteractionEnabled = true;
 
+        Debug.Log("'FIND THIS ITEM' clicked. Object interaction is now ENABLED.");
+
+    }
 }
