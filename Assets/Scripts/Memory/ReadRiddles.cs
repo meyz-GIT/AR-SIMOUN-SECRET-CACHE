@@ -45,6 +45,7 @@ public class ReadRiddles : MonoBehaviour
             winMessage.SetText("You've solved all the riddles!");
             riddleText.text = "You've solved all the riddles!";
             firstWordText.text = "";
+            ClickedItem.InteractionEnabled = false;
 
             UpdatePageNumberDisplay();
             return;
